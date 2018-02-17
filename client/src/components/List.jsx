@@ -1,13 +1,18 @@
 import React from 'react';
 import ListItem from './ListItem.jsx';
 
+const simStyle = {
+  marginTop: '100px'
+}
+
+
 const List = (props) => {
-  return (<div>
+  return (<div style ={simStyle}>
     <h4> Similar Artists </h4>
-    {/* {console.log('props', props)} */}
-    There are { props.artists.length} items.
-    {/* {console.log(props.artists)} */}
-    { props.artists.map((artist, idx) => <ListItem singleArtist={artist.name} key={idx}/>)}
+    
+    <h5>Here are the top { props.artists.length} similar artists to {props.artistName}.</h5>
+    
+    { props.artists.map((artist, idx) => <ListItem singleArtist={artist.name} matchPercentage={artist.match} artistImg={artist.image} key={idx}/>)}
   </div>)
 }
 

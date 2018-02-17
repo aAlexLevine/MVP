@@ -1,5 +1,9 @@
 import React from 'react';
 
+const subTitle = {
+    fontSize: 28
+}
+
 class Search extends React.Component {
   constructor(props) {
     super(props);
@@ -26,8 +30,9 @@ class Search extends React.Component {
 
   render() {
     return (<div>
-      <h4>Find new artists</h4>
-      Search for similar artists here: <input value={this.state.terms} onChange={this.onChange}/>       
+      <p style={subTitle}>Find new artists</p>
+      Search for similar artists here:<br/> <input value={this.state.terms} onChange={this.onChange}/>       
+      <br/>
       <button onClick={this.search}> Find new artists </button>
     </div>) 
   }
