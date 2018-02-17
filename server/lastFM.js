@@ -1,5 +1,5 @@
 var request = require('request')
-let config = require('../config.js').TOKEN || GITHUB_TOKEN
+let config = GITHUB_TOKEN// || require('../config.js').TOKEN;
 
 getNewArtistsByArtist = (artist, callback) => {
     let options = {
