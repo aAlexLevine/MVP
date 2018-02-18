@@ -16,7 +16,7 @@ app.use(bodyParser.json())
 app.post('/items', function (req, res) {
   let artist = req.body.artist
   console.log('Post request heard, The artist searched for was', artist)
-  getFromLastFM.getNewArtistsByArtist(artist,(data)=> {
+  getFromLastFM.getNewArtistsByArtist(artist, function(data) {
     res.send(data.similarartists.artist)
   })
   //make a request to LASTFM using the request(options, built out callback ) .then() => res.send()
@@ -25,7 +25,7 @@ app.post('/items', function (req, res) {
 app.post('/tracks', function(req, res) {
   let subArtist = req.body.subArtist
   console.log('post heard this is the subartists posted',req.body.subArtist)
-    getFromLastFM.getTracksbySubArtist(subArtist, (data)=> {
+    getFromLastFM.getTracksbySubArtist(subArtist, function(data) {
       console.log('Post heard from getTracksbySubArtist')
       res.send(data.toptracks.track)
     })
@@ -42,6 +42,6 @@ app.get('/items', function (req, res) {
   // });
 });
 
-app.listen(process.env.PORT || 3000, function() {
+app.listen(3000, function() {
   console.log('listening on port 3000!');
 });

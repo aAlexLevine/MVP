@@ -1,10 +1,10 @@
 var request = require('request')
-let config = process.env.TOKEN // || require('../config.js').TOKEN;
+let config =  require('../config.js').TOKEN;
 
 getNewArtistsByArtist = (artist, callback) => {
     let options = {
         
-        url:  `https://ws.audioscrobbler.com/2.0/?method=artist.getsimilar&artist=${artist}&api_key=${config}&format=json&limit=20`,
+        url:  `https://ws.audioscrobbler.com/2.0/?method=artist.getsimilar&artist=${artist}&api_key=${config}&format=json&limit=40`,
         headers: {
             'User-Agent': 'request',
             'Authorization' : `token ${config}`
